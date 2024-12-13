@@ -76,26 +76,3 @@ class G07DecisionTree():
             return self.predict_tree_(node.left, X)
         else:  # Nếu giá trị lớn hơn ngưỡng, duyệt cây con bên phải
             return self.predict_tree_(node.right, X)
-        
-
-# Ví dụ dữ liệu Email đã mã hóa TF-IDF
-X_train = np.array([
-    [0.1, 0.3, 0.5],
-    [0.7, 0.2, 0.4],
-    [0.6, 0.8, 0.1],
-    [0.4, 0.5, 0.7],
-    [0.1, 0.2, 0.8],
-    [0.3, 0.3, 0.4]
-])
-y_train = np.array([0, 1, 0, 1,0,0])
-
-# Dự đoán
-X_test = np.array([
-    [0.2, 0.4, 0.6],
-    [0.5, 0.1, 0.3]
-])
-
-dtree = G07DecisionTree()
-dtree.fit(X_train, y_train)
-predictions = dtree.predict(X_test)
-print(predictions)
